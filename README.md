@@ -8,8 +8,8 @@ This is working on Windows (and maybe other operating system, not tested yet).
 Make sure [adafruit_hid](https://github.com/adafruit/Adafruit_CircuitPython_HID) is installed.
 
 - Copy the `mouse_abs` module into the board's `/lib/` directory.
-- Copy the `boot.py` file, or adapt it to tour needs.
-- The code.py file contains a simple example that moves the mouse to different points.
+- Copy the content of `absolute_mouse_boot.py` to your boot.py (create it if needed).
+- The simple test file contains an example that moves the mouse to different points.
 
 # Demo
 
