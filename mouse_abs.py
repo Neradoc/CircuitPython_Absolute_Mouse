@@ -1,16 +1,14 @@
 # SPDX-FileCopyrightText: 2017 Dan Halbert for Adafruit Industries
+# SPDX-FileCopyrightText: 2021 David Glaude
 #
 # SPDX-License-Identifier: MIT
 
 """
-`adafruit_hid.mouse.Mouse`
-====================================================
-
-* Author(s): Dan Halbert, Bitboy
+* Author(s): Dan Halbert, David Glaude
 """
 import time
 
-from . import find_device
+from adafruit_hid import find_device
 
 
 class Mouse:
