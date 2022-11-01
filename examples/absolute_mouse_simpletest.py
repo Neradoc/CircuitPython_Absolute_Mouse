@@ -5,7 +5,7 @@ import busio
 import board
 import usb_hid
 import time
-from mouse_abs import Mouse
+from absolute_mouse import Mouse
 
 m = Mouse(usb_hid.devices)
 

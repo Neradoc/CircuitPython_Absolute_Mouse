@@ -1,7 +1,7 @@
 import usb_hid
 
 # https://stackoverflow.com/questions/36750287/two-byte-report-count-for-hid-report-descriptor
-absolute_mouse = usb_hid.Device(
+device = usb_hid.Device(
     report_descriptor=bytes(
         # Absolute mouse
         (0x05, 0x01)    # Usage Page (Generic Desktop)
