@@ -6,4 +6,3 @@
 
 .. automodule:: absolute_mouse
     :members:
-
