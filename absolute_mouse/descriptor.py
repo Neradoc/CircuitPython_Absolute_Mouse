@@ -1,3 +1,26 @@
+# SPDX-FileCopyrightText: 2017 Dan Halbert for Adafruit Industries
+# SPDX-FileCopyrightText: 2021 David Glaude
+# SPDX-FileCopyrightText: Copyright (c) 2023 Neradoc
+#
+# SPDX-License-Identifier: MIT
+"""
+`absolute_mouse.descriptor`
+================================================================================
+
+A library for a custom mouse device that sends absolute coordinates.
+
+
+* Author(s): David Glaude, Neradoc
+
+Implementation Notes
+--------------------
+
+**Software and Dependencies:**
+
+* Adafruit CircuitPython firmware for the supported boards:
+  https://circuitpython.org/downloads
+"""
+
 import usb_hid
 
 # https://stackoverflow.com/questions/36750287/two-byte-report-count-for-hid-report-descriptor

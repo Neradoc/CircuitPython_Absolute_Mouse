@@ -1,10 +1,8 @@
 # SPDX-FileCopyrightText: 2022 Neradoc
 # SPDX-License-Identifier: Unlicense
 
-import busio
-import board
-import usb_hid
 import time
+import usb_hid
 from absolute_mouse import Mouse
 
 m = Mouse(usb_hid.devices)

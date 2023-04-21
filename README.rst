@@ -17,8 +17,6 @@ Introduction
     :alt: Code Style: Black
 
 A library for a custom HID mouse device that sends absolute coordinates.
-This is demonstration of custom USB_HID to make a mouse device that send absolute coordinate (as opposed to normal mouse that do relative move).
-This is working on Windows (and maybe other operating system, not tested yet).
 
 
 Dependencies
