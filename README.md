@@ -1,6 +1,6 @@
 # CircuitPython_Absolute_Mouse
 
-This is a library for a custom mouse device that sends absolute coordinate (as opposed to a normal mouse that does relative movement).
+This is a library for a custom mouse device that sends absolute coordinates (as opposed to a normal mouse that does relative movement).
 This is working on Windows (and maybe other operating system, not tested yet).
 
 # How to use
