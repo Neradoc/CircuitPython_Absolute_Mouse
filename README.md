@@ -1,6 +1,6 @@
 # CircuitPython_Absolute_Mouse
 
-This is demonstration of custom USB_HID to make a mouse device that send absolute coordinate (as opposed to normal mouse that do relative move).
+This is a library for a custom mouse device that sends absolute coordinate (as opposed to a normal mouse that does relative movement).
 This is working on Windows (and maybe other operating system, not tested yet).
 
 # How to use
