@@ -1,6 +1,10 @@
 Introduction
 ============
 
+.. image:: https://readthedocs.org/projects/circuitpython-absolute-mouse/badge/?version=latest
+    :target: https://circuitpython-absolute-mouse.readthedocs.io/
+    :alt: Documentation Status
+
 
 .. image:: https://img.shields.io/discord/327254708534116352.svg
     :target: https://adafru.it/discord
