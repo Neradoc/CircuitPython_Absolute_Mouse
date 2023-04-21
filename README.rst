@@ -35,11 +35,11 @@ or individual libraries can be installed using
 Usage Example
 =============
 
-Copy the content of `examples/absolute_mouse_boot.py` to your boot.py (create it if needed).
+Copy the content of ``examples/absolute_mouse_boot.py`` to your boot.py (create it if needed).
 
 The simple test file contains an example that moves the mouse to different points.
 
-Original version seen on `Show and Tell` on 20/04/2022 `Check the video <https://www.youtube.com/watch?v=belKMexuOZA&t=1310s>._
+Original version seen on Show and Tell on 20/04/2022 `Check the video <https://www.youtube.com/watch?v=belKMexuOZA&t=1310s>`_.
 
 Installing to a Connected CircuitPython Device with Circup
 ==========================================================
