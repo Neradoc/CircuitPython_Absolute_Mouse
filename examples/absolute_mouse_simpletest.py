@@ -1,5 +1,5 @@
 # SPDX-FileCopyrightText: 2022 Neradoc
-# SPDX-License-Identifier: MIT
+# SPDX-License-Identifier: Unlicense
 
 import busio
 import board

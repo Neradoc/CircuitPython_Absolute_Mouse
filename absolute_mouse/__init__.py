@@ -1,15 +1,31 @@
 # SPDX-FileCopyrightText: 2017 Dan Halbert for Adafruit Industries
 # SPDX-FileCopyrightText: 2021 David Glaude
+# SPDX-FileCopyrightText: Copyright (c) 2023 Neradoc
 #
 # SPDX-License-Identifier: MIT
+"""
+`absolute_mouse`
+================================================================================
 
+A library for a custom mouse device that sends absolute coordinates.
+
+
+* Author(s): David Glaude, Neradoc
+
+Implementation Notes
+--------------------
+
+**Software and Dependencies:**
+
+* Adafruit CircuitPython firmware for the supported boards:
+  https://circuitpython.org/downloads
 """
-* Author(s): Dan Halbert, David Glaude
-"""
+
 import time
-
 from adafruit_hid import find_device
 
+__version__ = "0.0.0+auto.0"
+__repo__ = "https://github.com/Neradoc/CircuitPython_absolute_mouse.git"
 
 class Mouse:
     """Send USB HID mouse reports."""
