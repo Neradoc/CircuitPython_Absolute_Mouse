@@ -1,7 +1,7 @@
 import usb_hid
 
 # https://stackoverflow.com/questions/36750287/two-byte-report-count-for-hid-report-descriptor
-#fmt: off
+# fmt: off
 device = usb_hid.Device(
     report_descriptor=bytes((
         # Absolute mouse
@@ -55,4 +55,4 @@ device = usb_hid.Device(
     out_report_lengths=(0,),
     report_ids=(11,),
 )
-#fmt: on
+# fmt: on
