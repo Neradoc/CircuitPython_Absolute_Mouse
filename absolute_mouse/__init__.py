@@ -56,14 +56,6 @@ class Mouse:
         # report[5] wheel movement
         self.report = bytearray(6)
 
-        # Do a no-op to test if HID device is ready.
-        # If not, wait a bit and try once more.
-        try:
-            self._send_no_move()
-        except OSError:
-            time.sleep(1)
-            self._send_no_move()
-
     def press(self, buttons):
         """Press the given mouse buttons.
 
@@ -79,7 +71,7 @@ class Mouse:
             m.press(Mouse.LEFT_BUTTON | Mouse.RIGHT_BUTTON)
         """
         self.report[0] |= buttons
-        self._send_no_move()
+        self._mouse_device.send_report(self.report)
 
     def release(self, buttons):
         """Release the given mouse buttons.
@@ -88,12 +80,12 @@ class Mouse:
             ``MIDDLE_BUTTON``, and ``RIGHT_BUTTON``.
         """
         self.report[0] &= ~buttons
-        self._send_no_move()
+        self._mouse_device.send_report(self.report)
 
     def release_all(self):
         """Release all the mouse buttons."""
         self.report[0] = 0
-        self._send_no_move()
+        self._mouse_device.send_report(self.report)
 
     def click(self, buttons):
         """Press and release the given mouse buttons.
@@ -113,8 +105,11 @@ class Mouse:
         self.press(buttons)
         self.release(buttons)
 
-    def move(self, x=0, y=0, wheel=0):
-        """Move the mouse and turn the wheel as directed.
+    def move(self, x=None, y=None, wheel=0):
+        """
+        Place the mouse at the indicated position and turn the mouse wheel.
+        Moves to the coordinates before wheeling.
+        Does not move the mouse if x and y are not provided or None.
 
         :param x: Set pointer on x axis. 32767 = 100% to the right
         :param y: Set pointer on y axis. 32767 = 100% to the bottom
@@ -133,6 +128,16 @@ class Mouse:
             m.move(wheel=1)
         """
 
+        # Coordinates
+        if x is not None:
+            x = self._limit_coord(x)
+            self.report[1:3] = struct.pack("<H", x)
+        if y is not None:
+            y = self._limit_coord(y)
+            self.report[3:5] = struct.pack("<H", y)
+        if (x, y) != (None, None):
+            self._mouse_device.send_report(self.report)
+
         # Wheel
         while wheel != 0:
             partial_wheel = self._limit(wheel)
@@ -140,22 +145,10 @@ class Mouse:
             self._mouse_device.send_report(self.report)
             wheel -= partial_wheel
 
-        # Coordinates
-        x = self._limit_coord(x)
-        y = self._limit_coord(y)
-        # HID reports use little endian
-        self.report[1:5] = struct.pack("<HH", x, y)
-        self._mouse_device.send_report(self.report)
-
-    def _send_no_move(self):
-        """Send a button-only report."""
-        self.report[1:5] = b"\x00\x00\x00\x00"
-        self._mouse_device.send_report(self.report)
-
     @staticmethod
     def _limit(dist):
-        return min(127, max(-127, dist))
+        return min(127, max(-127, int(dist)))
 
     @staticmethod
     def _limit_coord(coord):
-        return min(32767, max(0, coord))
+        return min(32767, max(0, int(coord)))
