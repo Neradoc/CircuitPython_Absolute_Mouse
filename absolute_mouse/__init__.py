@@ -109,7 +109,7 @@ class Mouse:
         """
         Place the mouse at the indicated position and turn the mouse wheel.
         Moves to the coordinates before wheeling.
-        Does not move the mouse if x and y are not provided or None.
+        Does not move the mouse if x and y are not provided or ``None``.
 
         :param x: Set pointer on x axis. 32767 = 100% to the right
         :param y: Set pointer on y axis. 32767 = 100% to the bottom
